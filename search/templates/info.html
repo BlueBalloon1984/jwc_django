@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>主页Demo</title>
+		<meta name="description" content="Blueprint: Responsive Full Width Tabs" />
+		<meta name="keywords" content="responsive tabs, full width tabs, template, blueprint" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/materialicon.css" />
+		<link rel="stylesheet" href="/static/css/style.css" media="screen" type="text/css" /
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<header class="clearfix">
+				<span>Liewithen <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>
+				<h1 style="color: #47a3da">南京理工大学第三方教务处</h1>
+                <h4 style="color: #47a3da;float: right">{{ name }}</h4>
+			</header>	
+			<div id="tabs" class="tabs">
+				<nav>
+					<ul>
+                        <li><a href="#section-1" ><i class="mdi-action-assignment"><span>成绩查询</span></i></a></li>
+						<li><a href="#section-2" ><i class="mdi-action-account-balance"><span>课表查询</span></i></a></li>
+						<li><a href="#section-3" ><i class="mdi-social-school"><span>考试查询</span></i></a></li>
+						<li><a href="#section-4" ><i class="mdi-social-group"><span>社交中心</span></i></a></li>
+						<li><a href="#section-5" ><i class="mdi-social-notifications-on"><span>通知中心</span></i></a></li>
+					</ul>
+				</nav>
+				<div class="content">
+					<section id="section-1">
+                    <div id="2015-2016-2">
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2015-2016-2' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                    </div>
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2015-2016-1' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2014-2015-2' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2014-2015-1' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2013-2014-2' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2013-2014-1' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2012-2013-2' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+
+                        <table>
+                            {% for item in grade %}
+                                {% if item.0 == '2012-2013-1' %}
+                                    {% ifequal item.4 '必修' %}
+                                        <tr>
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '公选' %}
+                                        <tr style="color: blue">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="cj">{{ item.2 }}</td>
+                                            <td title="xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                    {% ifequal item.4 '任选' %}
+                                        <tr style="color: red">
+                                            <td>{{ item.1 }}</td>
+                                            <td title="c-cj">{{ item.2 }}</td>
+                                            <td title="c-xf">{{ item.3 }}</td>
+                                            <td>{{ item.4 }}</td>
+                                        </tr>
+                                    {% endifequal %}
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+					</section>
+
+
+					<section id="section-2">
+                            <h2>课表</h2>
+                            <table border="8">
+                                <thead>
+                                <td>节次</td>
+                                <td>周一</td>
+                                </thead>
+                                <tr>
+                                    <td>第一节</td>
+                                    <td>{{ course.0|safe }}</td>
+                                </tr>
+                                <tr>
+                                    <td>第二节</td>
+                                    <td>{{ course.1|safe }}</td>
+                                </tr>
+                                <tr>
+                                    <td>第三节</td>
+                                    <td>{{ course.2|safe }}</td>
+                                </tr>
+                                <tr>
+                                    <td>第四节</td>
+                                    <td>{{ course.3|safe }}</td>
+
+                                </tr>
+                                <tr>
+                                    <td>第五节</td>
+                                    <td>{{ course.4|safe }}</td>
+                                </tr>
+                            </table>
+					</section>
+
+
+					<section id="section-3">
+
+					</section>
+
+
+					<section id="section-4">
+
+					</section>
+
+
+					<section id="section-5">
+
+					</section>
+				</div><!-- /content -->
+			</div><!-- /tabs -->
+
+
+		</div>
+
+
+		<script src="/static/js/cbpFWTabs.js"></script>
+		<script>
+			new CBPFWTabs( document.getElementById( 'tabs' ) );
+		</script>
+		<script src='/static/js/jquery.min.js'></script>
+		<script src="/static/js/index.js"></script>
+	</body>
+    
+</html>
